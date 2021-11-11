@@ -74,7 +74,7 @@ bool onPowerState1(const String &deviceId, bool &state)
   spr.setTextColor(TFT_WHITE, TFT_BLACK);
   spr.drawString("WIFI :", 10 , 5);
   spr.setTextColor(TFT_GREEN, TFT_BLACK);
-  spr.drawString("conneted", 100 , 5);
+  spr.drawString("connected", 100 , 5);
   spr.setTextColor(TFT_WHITE, TFT_BLACK);
   spr.drawString("Device1: ", 10, 65);
   spr.drawString("Device2: ", 10, 105);
@@ -97,7 +97,7 @@ bool onPowerState2(const String &deviceId, bool &state)
   spr.setTextColor(TFT_WHITE, TFT_BLACK);
   spr.drawString("WIFI :", 10 , 5);
   spr.setTextColor(TFT_GREEN, TFT_BLACK);
-  spr.drawString("conneted", 100 , 5);
+  spr.drawString("connected", 100 , 5);
   spr.setTextColor(TFT_WHITE, TFT_BLACK);
   spr.drawString("Device1: ", 10, 65);
   spr.drawString("Device2: ", 10, 105);
@@ -266,7 +266,7 @@ void setupWiFi()
   spr.setTextColor(TFT_WHITE, TFT_BLACK);
   spr.drawString("WIFI :", 10 , 5);
   spr.setTextColor(TFT_GREEN, TFT_BLACK);
-  spr.drawString("conneted", 100 , 5);
+  spr.drawString("connected", 100 , 5);
   spr.setTextColor(TFT_WHITE, TFT_BLACK);
   spr.drawString("Device1: ", 10, 65);
   spr.drawString("Device2: ", 10, 105);
@@ -299,7 +299,7 @@ void setupSinricPro()
 void setup()
 {
   Serial.begin(BAUD_RATE);
-//  while (!Serial);
+  //while (!Serial);
 
   pinMode(LED1_PIN, OUTPUT); // define LED GPIO as output
   pinMode(LED2_PIN, OUTPUT); // define LED GPIO as output
@@ -328,13 +328,18 @@ void setup()
   spr.setTextColor(TFT_WHITE, TFT_BLACK);
   spr.drawString("WIFI :", 10 , 5);
   spr.setTextColor(TFT_RED, TFT_BLACK);
-  spr.drawString("disconneted", 100 , 5);
+  spr.drawString("disconnected", 100 , 5);
   spr.setTextColor(TFT_WHITE, TFT_BLACK);
   spr.drawString("Device1: ", 10, 65);
   spr.drawString("Device2: ", 10, 105);
   //spr.drawString("Device3: ", 10, 145);
   spr.pushSprite(0, 0);
-
+  
+  //RoSchmi
+  Serial.println("Starting");
+  char buf[100] {0};
+  sprintf(buf, "\r\nRTL8720 Firmware: %s\r\n", rpc_system_version());
+  Serial.println(buf);
   setupWiFi();
   setupSinricPro();
 }
