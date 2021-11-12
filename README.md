@@ -2,7 +2,7 @@
 
 Control digital Inputs and Outputs of Wio Terminal using Sinric Pro service and phone-App via SinricPro_Generic library.
 
-#### Unfortunately the Wio Terminal App ocasionally hangs. So for a real live use case a watchdog would be needed.
+#### Unfortunately the Wio Terminal App occasionally hangs. So for a real live use case a watchdog would be needed.
 
 Functions can be used as Alexa-skills.
 
